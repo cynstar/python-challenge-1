@@ -45,8 +45,8 @@ It looks like there's an issue with the indentation in your code, specifically w
         print("Invalid entry. Please try again.") 
 ---
 
-My original code was as follows:
----
+**My original code was as follows:**
+
    while True:
        # Ask the customer if they would like to order anything else
         keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ").lower()
