@@ -29,7 +29,7 @@ After being stuck for some time on an issue with my code not escaping the outer 
     # Ask the customer if they would like to order anything else
     keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ").lower()
 
-    # Check the customer's input
+     Check the customer's input
     if keep_ordering == "y":
         # Keep ordering
         break  # Exit the keep ordering question loop
@@ -48,15 +48,15 @@ My original code was as follows:
        # Ask the customer if they would like to order anything else
         keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ").lower()
 
-        # 5. Check the customer's input
+        > 5. Check the customer's input
         if keep_ordering == "y":
                 # Keep ordering
             break
                 # Exit the keep ordering question loop
-        elif keep_ordering != "n":
+        > elif keep_ordering != "n":
             print(f"Invalid entry. Please try again.")
 
-     if keep_ordering == "n":
+     >if keep_ordering == "n":
         print(f"Thank you for placing your order.")
         place_order = False
         break
