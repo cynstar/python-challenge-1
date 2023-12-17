@@ -24,7 +24,6 @@ After being stuck for some time on an issue with my code not escaping the outer 
 
 > It looks like there's an issue with the indentation in your code, specifically within the innermost while True loop. The break statement to exit the innermost loop should be outside of the loop that checks keep_ordering. Here's the corrected portion of your code:
 
-**(Previous code...)**
 
 > while True:
     # Ask the customer if they would like to order anything else
@@ -43,12 +42,10 @@ After being stuck for some time on an issue with my code not escaping the outer 
     else:
         print("Invalid entry. Please try again.")
 
-> **(Rest of your code...)**
-
 My original code was as follows:
 
    > while True:
-        # Ask the customer if they would like to order anything else
+       # Ask the customer if they would like to order anything else
         keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ").lower()
 
         # 5. Check the customer's input
