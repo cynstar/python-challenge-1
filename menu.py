@@ -54,6 +54,8 @@ menu = {
 # menu item name, item price, and quantity ordered
 
 order_list = []
+#CE-upon review I declared a second list so I have a list containing the cumulative order_list.
+order = []
 
 # Launch the store and present a greeting to the customer
 print("Welcome to the variety food truck.")
@@ -153,10 +155,10 @@ while place_order:
                                     {"item price": item_price},
                                     {"quantity ordered":item_qty}
                                     ]
+                            # CE - appending to the overall order list to collect each order_list.
+                            order.append(order_list)
                         else:
                             print(f"Quantity must be more than 0.")
-                        #CE-testing the order list with print(order_list)
-                    # Add the item name, price, and quantity to the order list
                     # CE - instruction above seems to be part of the True, moved
                     # Tell the customer that their input isn't valid
                     else:
@@ -180,57 +182,67 @@ while place_order:
 
     while True:
         # Ask the customer if they would like to order anything else
+        # CE - corrected this while True loop with assistance from chatgpt
         keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ").lower()
-
+        # Complete the order
+        # Since the customer decided to stop ordering, thank them for
+        # their order
         if keep_ordering == "y":
             # Keep ordering
+            print(order_list)
+            print(order)
             break  # Exit the keep ordering question loop
 
+            # Exit the keep ordering question loop
         elif keep_ordering == "n":
             print("Thank you for placing your order.")
             place_order = False
             break  # Exit both the inner and outer loops
-
+               # Tell the customer to try again 
         else:
             print("Invalid entry. Please try again.")
-
-
-        
-                # Complete the order
-
-                # Since the customer decided to stop ordering, thank them for
-                # their order
-
-                # Exit the keep ordering question loop
-
-
-                # Tell the customer to try again 
 
 
 
 # Print out the customer's order
 print("This is what we are preparing for you.\n")
 
-# Uncomment the following line to check the structure of the order
-print(order_list)
+# # Uncomment the following line to check the structure of the order
+# print(order)
+
+# CE - added this order below to work through the next steps without needing to go through the ordering functionality again.
+# order = [[{'menu item name': 'Soda - Small'}, {'item price': 1.99}, {'quantity ordered': 2}], [{'menu item name': 'Burger - Chicken'}, {'item price': 7.49}, {'quantity ordered': 1}], [{'menu item name': 'Tea - Thai iced'}, {'item price': 3.99}, {'quantity ordered': 2}]]
+
 
 print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
 
 # 6. Loop through the items in the customer's order
+for x in order:
 
     # 7. Store the dictionary items as variables
+    item = x[0]['menu item name']
+    price = x[1]['item price']
+    qty = x[2]['quantity ordered']
+    the_order = [item, price, qty]
 
 
     # 8. Calculate the number of spaces for formatted printing
-
-
-    # 9. Create space strings
+# I asked chatgpt why the way I did it wasn't working and it indicated that it was due to how I had the parenthesis plus I was attempting to subtract from float. I've revised based on the clarifications.
+      # 9. Create space strings
+    space = " "
+    string_price = str(price) 
+    formatted = f' {item}{space * (25-len(item))}| {string_price}{space * (7-len(string_price))}| {qty}'
 
 
     # 10. Print the item name, price, and quantity
-
+    print(formatted)
 
 # 11. Calculate the cost of the order using list comprehension
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
+    #CE - I couldn't figure out how to create this list comprehension. I kept getting only the sum of one value instead of the sum of all the values. 
+
+   #total_cost = sum([])
+# Total_Cost = [price * qty for x in order]
+# print(Total_Cost)

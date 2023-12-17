@@ -22,10 +22,10 @@ Within the menu.py file between lines 185 and 203:
 
 After being stuck for some time on an issue with my code not escaping the outer loop, I asked chat gpt why I couldn't get out of a specific loop and showed it my code. It explained the following:
 
-> It looks like there's an issue with the indentation in your code, specifically within the innermost while True loop. The break statement to exit the innermost loop should be outside of the loop that checks keep_ordering. Here's the corrected portion of your code:
+''' It looks like there's an issue with the indentation in your code, specifically within the innermost while True loop. The break statement to exit the innermost loop should be outside of the loop that checks keep_ordering. Here's the corrected portion of your code:
 
 
-> while True:
+ while True:
     # Ask the customer if they would like to order anything else
     keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ").lower()
 
@@ -40,11 +40,12 @@ After being stuck for some time on an issue with my code not escaping the outer 
         break  # Exit both the inner and outer loops
 
     else:
-        print("Invalid entry. Please try again.")
+        print("Invalid entry. Please try again.") 
+'''
 
 My original code was as follows:
 
-   > while True:
+   ''' while True:
        # Ask the customer if they would like to order anything else
         keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ").lower()
 
@@ -59,7 +60,8 @@ My original code was as follows:
      >if keep_ordering == "n":
         print(f"Thank you for placing your order.")
         place_order = False
-        break
+        break 
+    '''
 
 I corrected my entry per the AI's guidance.
 
